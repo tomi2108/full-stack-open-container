@@ -1,0 +1,24 @@
+docker run -it ubuntu bash
+cd usr
+cd src
+mkdir app
+touch index.js
+exit
+docker container ls -a
+docker start recursing_stonebraker
+docker container ls -a
+docker kill recursing_stonebraker
+docker start recursing_stonebraker --interactive
+apt-get update
+apt-get -y install nano
+nano /usr/src/app/index.js
+apt install -y nodejs
+node /usr/src/app/index.js
+docker commit recursing_stonebraker hello-node-world
+docker image ls
+docker run -it hello-node-world bash
+docker container rm recursing_stonebraker
+docker container run -it --name hello-node node:16 bash 
+mkdir /usr/src/app
+cd /usr/src/app
+docker container cp ./index.js hello-node:/usr/src/app/index.js
